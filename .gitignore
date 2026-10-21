@@ -1,0 +1,52 @@
+# ============================================================
+# 1. Keil MDK-ARM 编译产物（约 205 MB，全部可重新生成）
+# ============================================================
+MDK-ARM/STM32F407ZGT6_LVGL_FREERTOS/
+MDK-ARM/DebugConfig/
+MDK-ARM/RTE/
+MDK-ARM/EventRecorderStub.scvd
+*.axf
+*.crf
+*.o
+*.d
+*.dep
+*.lnp
+*.map
+*.htm
+*.lst
+*.build_log.htm
+*.uvguix*
+*.bak
+*.fixbak
+
+# ============================================================
+# 2. LVGL 第三方库：仅保留编译必需部分
+#    lvgl-9.5/lvgl-master 原始包含 demo/examples/tests/docs/scripts，
+#    与本工程编译无关（uVision 只编 src + libs + env_support + 头文件）
+# ============================================================
+Middlewares/Third_Party/lvgl-9.5/lvgl-master/demos/
+Middlewares/Third_Party/lvgl-9.5/lvgl-master/examples/
+Middlewares/Third_Party/lvgl-9.5/lvgl-master/tests/
+Middlewares/Third_Party/lvgl-9.5/lvgl-master/docs/
+Middlewares/Third_Party/lvgl-9.5/lvgl-master/scripts/
+Middlewares/Third_Party/lvgl-9.5/lvgl-master/out/
+Middlewares/Third_Party/lvgl-9.5/lvgl-master/zephyr/
+
+# ============================================================
+# 3. CMSIS 中本项目未使用的部分（裸机 + HAL，不用 DSP/Lib/NN/RTX）
+#    CubeMX 重新生成时会自动拷回，删掉不影响编译
+# ============================================================
+Drivers/CMSIS/DSP/
+Drivers/CMSIS/Lib/
+Drivers/CMSIS/NN/
+Drivers/CMSIS/Core_A/
+Drivers/CMSIS/RTOS/
+Drivers/CMSIS/RTOS2/
+
+# ============================================================
+# 4. 编辑器与系统文件
+# ============================================================
+.vscode/
+*.tmp
+.DS_Store
+Thumbs.db
